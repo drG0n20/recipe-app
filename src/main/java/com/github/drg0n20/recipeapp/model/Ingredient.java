@@ -1,13 +1,12 @@
 package com.github.drg0n20.recipeapp.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Ingredient {
 

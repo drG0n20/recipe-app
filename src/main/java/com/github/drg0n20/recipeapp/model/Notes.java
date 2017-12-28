@@ -1,12 +1,11 @@
 package com.github.drg0n20.recipeapp.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Notes {
 
@@ -19,4 +18,12 @@ public class Notes {
 
     @Lob
     private String recipeNotes;
+
+    public Notes() {
+    }
+
+    protected boolean canEqual(Object other) {
+        return other instanceof Notes;
+    }
+
 }
